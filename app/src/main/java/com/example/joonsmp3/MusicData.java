@@ -9,25 +9,39 @@ import java.util.Objects;
 public class MusicData {
 
     private String id;
-    private String artists;
+    private String artist;
     private String title;
     private String albumArt;
     private String duration;
+    private int liked;
 
-    public MusicData(String id, String artists, String title, String albumArt, String duration) {
+    public MusicData(String id, String artist, String title, String albumArt, String duration, int liked) {
         this.id = id;
-        this.artists = artists;
+        this.artist = artist;
         this.title = title;
         this.albumArt = albumArt;
         this.duration = duration;
+        this.liked = liked;
+    }
+
+    public String getArtist() {
+        return artist;
+    }
+
+    public void setArtist(String artist) {
+        this.artist = artist;
+    }
+
+    public int getLiked() {
+        return liked;
+    }
+
+    public void setLiked(int liked) {
+        this.liked = liked;
     }
 
     public String getId() {
         return id;
-    }
-
-    public String getArtists() {
-        return artists;
     }
 
     public String getTitle() {
@@ -46,10 +60,6 @@ public class MusicData {
         this.id = id;
     }
 
-    public void setArtists(String artists) {
-        this.artists = artists;
-    }
-
     public void setTitle(String title) {
         this.title = title;
     }
@@ -66,7 +76,7 @@ public class MusicData {
     public String toString() {
         return "MusicData{" +
                 "id='" + id + '\'' +
-                ", artists='" + artists + '\'' +
+                ", artist='" + artist + '\'' +
                 ", title='" + title + '\'' +
                 ", albumArt='" + albumArt + '\'' +
                 ", duration='" + duration + '\'' +
@@ -85,7 +95,7 @@ public class MusicData {
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public int hashCode() {
-        return Objects.hash(id, artists, title, albumArt, duration);
+        return Objects.hash(id, artist, title, albumArt, duration);
     }
 
 }
